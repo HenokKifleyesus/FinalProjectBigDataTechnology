@@ -1,0 +1,14 @@
+
+sudo mv kafka_2.13-3.0.0 /usr/lib/kafka_2.13-3.0.0
+
+tar -xvzf kafka_2.13-3.0.0.tgz
+
+kafka-server-start.sh $KAFKA_HOME/config/server.properties
+
+bin/zookeeper-server-start.sh config/zookeeper.properties
+
+service --status-all
+
+sudo service hbase-master start;
+
+sudo service hbase-regionserver start;
